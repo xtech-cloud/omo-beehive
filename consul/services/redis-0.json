@@ -1,0 +1,26 @@
+{
+    "ID": "redis-0",
+    "Name": "redis",
+    "Tags": [
+        "primary",
+        "v1"
+    ],
+    "Address": "127.0.0.1",
+    "Port": 6379,
+    "Meta": {
+        "redis_version": "5.0.7"
+    },
+    "EnableTagOverride": false,
+    "Check": {
+        "DeregisterCriticalServiceAfter": "90m",
+        "Args": [
+            "/usr/local/scripts/consul_healthy.sh", "redis-server"
+        ],
+        "Interval": "10s",
+        "Timeout": "5s"
+    },
+    "Weights": {
+        "Passing": 10,
+        "Warning": 1
+    }
+}
